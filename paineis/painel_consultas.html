@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" x-data="data" :class="{ 'dark': dark }" id="html" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="NEXUS API REST - PAINEL" property="og:title">
+    <meta content="A tecnologia move o mundo, NEXUS API REST - LOGIN está junto." property="og:description">
+    <meta content="https://telegra.ph/file/d9ff95e4db542069612c0.jpg" property="og:image">
+    <meta name="csrf-token" content="6LclkvcpAAAAAIoATPVpPidxpRNM9ZVn8O-eRNb0">
+    <title>NEXUS API REST - PAINEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://blikerhost.com.br/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <style>
+        [x-cloak] { display: none !important; }
+        .input-group {
+            margin: 15px 0;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background: #131313;
+        }
+    </style>
+
+    <script>
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        if (prefersDarkScheme.matches && !window.localStorage.getItem('dark') && "dark" == "") {
+            document.querySelector("html").classList.add("dark");
+        }
+    </script>
+
+    <script defer src="https://blikerhost.com.br/js/app.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900 dark:text-gray-300 text-gray-700">
+        <div class="max-w-4xl flex-1 h-full mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
+            <div class="flex flex-col overflow-y-auto md:flex-row">
+                <div class="h-32 md:h-auto md:w-1/2">
+                    <img aria-hidden="true" class="object-cover w-full h-full" src="https://telegra.ph/file/d9ff95e4db542069612c0.jpg" alt="NEXUS API REST - LOJA" />
+                </div>
+                <div class="md:w-1/2">
+                    <div class="w-full p-6 sm:p-12">
+                        <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">PAINEL DE CONSULTA</h1>
+                        <form id="loginForm">
+                            <input type="hidden" name="_token" value="6LclkvcpAAAAAIoATPVpPidxpRNM9ZVn8O-eRNb0">
+                            <label class="block text-sm">
+                                <span class="text-gray-700 dark:text-gray-400">APIKEY🔑</span>
+                                <input type="text" name="username" class="block w-full text-sm dark:border-gray-600 mt-1 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray rounded-md shadow-sm border-gray-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required autofocus id="token">
+                            </label>
+                            <div class="input-group">
+                                <label for="consulta">Tipo de Consulta 🎛:</label>
+                                <select id="consulta">
+                                    <option value="cpf">CPF</option>
+                                    <option value="cpf2">CPF2</option>
+                                    <option value="cpf3">CPF3</option>
+                                    <option value="cpf4">CPF4</option>
+                                    <option value="nome">Nome</option>
+                                    <option value="nome1">Nome1</option>
+                                    <option value="nome2">Nome2</option>
+                                    <option value="tel">Tel</option>
+                                    <option value="tel1">Tel1</option>
+                                    <option value="tel2">Tel2</option>
+                                    <option value="tel3">Tel3</option>
+                                    <option value="placa">Placa</option>
+                                    <option value="placa1">Placa1</option>
+                                    <option value="placa2">Placa2</option>
+                                    <option value="cnpj">CNPJ</option>
+                                    <option value="cnpj1">CNPJ1</option>
+                                    <option value="cnpj2">CNPJ2</option>
+                                    <option value="rg">RG</option>
+                                </select>
+                            </div>
+                            <label class="block mt-4 text-sm">
+                                <span class="text-gray-700 dark:text-gray-400">Dados para consultar🖨</span>
+                                <input type="text" name="text" class="block w-full text-sm dark:border-gray-600 mt-1 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray rounded-md shadow-sm border-gray-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required autocomplete="current-password" id="dado">
+                            </label>
+                            <a class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" onclick="consultar()">Consultar dados</a>
+                        </form>
+                        <hr class="my-8">
+                        <div class="flex justify-between mt-4">
+                            <p>
+                                <a href="./rg" class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline">Criar conta</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        async function consultar() {
+            const token = document.getElementById('token').value;
+            const consulta = document.getElementById('consulta').value;
+            const dado = document.getElementById('dado').value;
+
+            Swal.fire({
+                title: 'Carregando...',
+                text: 'Por favor, aguarde enquanto realizamos a consulta.',
+                didOpen: () => {
+                    Swal.showLoading();
+                },
+                allowOutsideClick: false
+            });
+
+            try {
+                const response = await fetch(`http://br1.infinityhost.tech:8904/consultas/${consulta}?query=${dado}&apikey=${token}`);
+                if (!response.ok) {
+                    throw new Error('Erro na requisição.');
+                }
+
+                const data = await response.json();
+                Swal.close();
+
+                if (data.success) {
+                    const resultados = data.resultados;
+                    let resultadoHtml = `<div style="text-align: left;">`;
+                    resultadoHtml += `<h2 style="color: #ff4500;">🔍 Consulta de ${consulta.toUpperCase()} 🔎</h2>`;
+                    resultados.forEach(item => {
+                        if (item.a) {
+                            resultadoHtml += `<p><strong>${item.a}:</strong> ${item.b || ''}</p>`;
+                        }
+                    });
+                    resultadoHtml += `</div>`;
+
+                    Swal.fire({
+                        title: 'Consulta Bem Sucedida!',
+                        html: resultadoHtml,
+                        icon: 'success',
+                        confirmButtonText: 'Copiar',
+                        showCancelButton: true,
+                        cancelButtonText: 'Fechar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            navigator.clipboard.writeText(resultadoHtml);
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Token inválido, ou sem request',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            } catch (error) {
+                console.log(error);
+                Swal.close();
+                Swal.fire({
+                    title: 'Erro!',
+                    text: `Ocorreu um erro ao realizar a consulta: ${error.message}`,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

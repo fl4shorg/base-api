@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html :class="{ 'dark': dark }" x-data="data" lang="en" id="html" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="NEXUS API REST - PAINEL" property="og:title">
+    <meta content="A tecnologia move o mundo, NEXUS API REST - LOGIN tรก junto." property="og:description">
+    <meta content='https://telegra.ph/file/d9ff95e4db542069612c0.jpg' property="og:image">
+    <meta name="csrf-token" content="6LclkvcpAAAAAIoATPVpPidxpRNM9ZVn8O-eRNb0">
+    <title>NEXUS API REST - PAINEL/title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://blikerhost.com.br/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+    <style>
+        [x-cloak] { display: none !important; }
+        .select2-container .select2-selection--single {
+            height: 38px;
+            padding: 6px 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            color: red;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered option{
+            color: #FF0000;
+            line-height: 28px;
+            background: #FF0000
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 36px;
+            right: 10px;
+            color: red;
+        }
+        
+        
+        
+    </style>
+    <script>
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        if (prefersDarkScheme.matches && !window.localStorage.getItem('dark') && "dark" == "") {
+            document.querySelector("html").classList.add("dark");
+        }
+    </script>
+    <script defer src="https://blikerhost.com.br/js/app.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900 dark:text-gray-300 text-gray-700">
+        <div class="max-w-4xl flex-1 h-full mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
+            <div class="flex flex-col overflow-y-auto md:flex-row">
+                <div class="h-32 md:h-auto md:w-1/2">
+                    <img aria-hidden="true" class="object-cover w-full h-full" src="https://telegra.ph/file/d9ff95e4db542069612c0.jpg" alt="NEXUS API REST - LOGIN Logo" />
+                </div>
+                <div class="md:w-1/2">
+                    <div class="w-full p-6 sm:p-12">
+                        <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">Painel</h1>
+                        <form id="loginForm">
+                            <input type="hidden" name="_token" value="6LclkvcpAAAAAIoATPVpPidxpRNM9ZVn8O-eRNb0">
+
+                            <label for="category" class="block mt-4 text-sm text-gray-700 dark:text-gray-400">Categoria</label>
+                            <select style="padding: 12px 120px" class="form-control" id="category">
+                                <option value="instagram">📸 Instagram</option>
+                                <option value="tiktok">🎵 TikTok</option>
+                                <option value="whatsapp">🟢 WhatsApp</option>
+                                <option value="facebook">🌐 Facebook</option>
+                                <option value="youtube">🔴 YouTube</option>
+                                <option value="twitter">🔵 Twitter</option>
+                                <option value="spotify">🟢 Spotify</option>
+                                <option value="kwai">🟠 Kwai</option>
+                            </select>
+
+                            <label for="quantity" class="block mt-4 text-sm text-gray-700 dark:text-gray-400">Quantidade</label>
+                            <input style="color: white; background: black" type="number" class="form-control block w-full text-sm dark:border-gray-600 mt-1 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray rounded-md shadow-sm border-gray-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="quantity" min="1" value="1">
+            
+                            <label for="service" class="block mt-4 text-sm text-gray-700 dark:text-gray-400">Serviço</label>
+                            <select style="padding: 12px 160px;"t class="form-control" id="service">
+                                <!-- Serviços serão adicionados via JavaScript -->
+                            </select>
+
+                            <a class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple" onclick="pedir()">Realizar pedido</a>
+                        </form>
+                        <hr class="my-8">
+                        <div class="flex justify-between mt-4">  
+                            <p>
+                                <a href="./rg" class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline">Criar conta</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.full.min.js"></script>
+    <script>
+        function pedir() {
+            const selectedService = $('#service option:selected').text();
+            const quantity = $('#quantity').val();
+            const pricePerUnit = parseFloat(selectedService.match(/R\$ (\d+\.\d+)/)[1]);
+            const totalPrice = (pricePerUnit * quantity).toFixed(2);
+        
+            var num = "557481145568";
+            var txt = `🔅CATEGORIA: ${selectedService}\n❓UNIDADES: ${quantity}\n✅TOTAL: ${totalPrice}\n> Não, alterem o total mesmo sendo alterado sera cobrador o preço do painel📵`;
+        
+            location.href = `https://wa.me/${num}?text=${encodeURIComponent(txt)}`;
+        }
+
+        $(document).ready(function() {
+            const services = {
+                instagram: [
+                    { id: '1', text: '📸 Seguidores Instagram | Contas Antigas | Qualidade Alta | R$ 0.0265' },
+                    { id: '2', text: '💬 Comentários Instagram | R$ 0.06486' }
+                ],
+                tiktok: [
+                    { id: '3', text: '🎵 Seguidores TikTok | R$ 0.03598' },
+                    { id: '4', text: '❤️ Curtidas TikTok | R$ 0.03' }
+                ],
+                whatsapp: [
+                    { id: '5', text: '🟢 Canal WhatsApp | R$ 0.09334' }
+                ],
+                facebook: [
+                    { id: '6', text: '🌐 Seguidores Facebook | R$ 0.03188' }
+                ],
+                youtube: [
+                    { id: '7', text: '🔴 Inscritos YouTube | R$ 0.17998' }
+                ],
+                twitter: [
+                    { id: '8', text: '🔵 Seguidores Twitter | R$ 0.04782' }
+                ],
+                spotify: [
+                    { id: '9', text: '🟢 Seguidores Spotify | R$ 0.09334' }
+                ],
+                kwai: [
+                    { id: '10', text: '🟠 Seguidores Kwai | R$ 0.03188' }
+                ]
+            };
+
+            $('#category').select2();
+            $('#service').select2();
+            
+            $('#category').on('change', function() {
+                const category = $(this).val();
+                const serviceOptions = services[category] || [];
+                $('#service').empty().select2({ data: serviceOptions });
+                updatePrice();
+            });
+
+            $('#service, #quantity').on('change', function() {
+                updatePrice();
+            });
+
+
+
+
+            function updatePrice() {
+                const selectedService = $('#service option:selected').text();
+                const quantity = $('#quantity').val();
+                const pricePerUnit = parseFloat(selectedService.match(/R\$ (\d+\.\d+)/)[1]);
+                const totalPrice = (pricePerUnit * quantity).toFixed(2);
+                $('#price').val(totalPrice);
+                updateDescription(selectedService);
+            }
+
+            function updateDescription(serviceText) {
+                const description = `
+                    DETALHES:
+                    <br>✶ Pode ter bastante queda.
+                    <br>✶ Este serviço funciona apenas em perfil público.
+                    <br>✶ O pedido será considerado concluído se inserir o link errado.
+                    <br>✶ O pedido será considerado concluído se o link for alterado/removido.
+                    <br>✶ A reposição pode levar de 3 a 4 dias para reiniciar.
+                    <br>
+                    <br>⚠ ATENÇÃO!
+                    <br>★ Não faça vários pedidos ao mesmo tempo. Aguarde a conclusão do anterior e faça um novo.
+                    <br>
+                    <br><strong>Serviço Selecionado:</strong> ${serviceText}
+                `;
+                $('#description').html(description);
+            }
+
+            // Trigger the initial change to set the defaults
+            $('#category').trigger('change');
+        });
+    </script>
+<style>
+  select {
+    background: #000000;
+    color: #FF0000;
+  }
+</style>
+</body>
+
+</html>
+
+
+
+
