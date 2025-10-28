@@ -40,6 +40,45 @@
       background-color: transparent !important;
     }
 
+    /* Melhorias visuais */
+    .card {
+      background-color: rgba(30, 30, 30, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 12px 40px rgba(0, 150, 255, 0.3) !important;
+      border: 1px solid rgba(0, 150, 255, 0.3) !important;
+    }
+
+    .sidebar {
+      background: rgba(20, 20, 20, 0.9) !important;
+      backdrop-filter: blur(10px) !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .navbar {
+      background: rgba(30, 30, 30, 0.9) !important;
+      backdrop-filter: blur(10px) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+      border: none !important;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6) !important;
+    }
+
     /* Estilo para a animação de entrada */
     @keyframes slide-in-left {
       0% {
