@@ -8,9 +8,9 @@ app.use(express.json());
 app.use(express.static('.'));
 
 const mockApiConfig = {
-  nome_da_api: "NEXUS API REST",
+  nome_da_api: "NEEXT API",
   interface: {
-    titulo_paginas: "NEXUS API REST - Documentação",
+    titulo_paginas: "NEEXT API - Documentação",
     descricao_paginas: "API REST completa com diversos geradores e ferramentas",
     foto_dash: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
     logotipo_url: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
@@ -25,10 +25,10 @@ const mockApiConfig = {
     url_whatsapp_group: "https://wa.me/18092572502",
     url_whatsapp_group2: "https://wa.me/18092572502",
     url_youtube: "https://youtube.com",
-    insta: "@nexus_api"
+    insta: "@neext_api"
   },
   creditos: {
-    by: "Fantasma - Vix Zap"
+    by: "NEEXT"
   },
   preco1000RequetsCustar: 10.00
 };

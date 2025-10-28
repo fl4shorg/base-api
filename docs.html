@@ -6,11 +6,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta property="og:url" name="og:url" content="[+] Desenvolvido por Fantasma - vix zap[+]">
+<meta property="og:url" name="og:url" content="[+] Desenvolvido por NEEXT[+]">
 <script src="js/twk-main.js" charset="UTF-8" crossorigin="*"></script><script src="js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script><script src="js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script><script src="js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script><script src="js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script><script src="js/twk-app.js" charset="UTF-8" crossorigin="*"></script><script async="" src="js/1f3t1darb" charset="UTF-8" crossorigin="*"></script>
 <!--FIM-->
         <link rel="icon" href="https://telegra.ph/file/957afb9bc37658339c603.jpg" type="image/x-icon">
-<title>BEM VINDOS A APIS DA NEXUS🏆</title>
+<title>BEM VINDOS A NEEXT API🏆</title>
 <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
 <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
@@ -21,8 +21,8 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="shortcut icon" href="https://telegra.ph/file/957afb9bc37658339c603.jpg"><link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
 <script src="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
-<meta property="og:title" content="NEXUS APIS">  
-<meta name="description" content="dono: Fantasma - Vix zap">
+<meta property="og:title" content="NEEXT API">  
+<meta name="description" content="dono: NEEXT">
 <meta property="og:image" content="https://telegra.ph/file/957afb9bc37658339c603.jpg">
 <script charset="utf-8" src="js/twk-chunk-2d0d2b7c.js"></script><script charset="utf-8" src="js/twk-chunk-2d224aff.js"></script><script charset="utf-8" src="js/twk-chunk-f1596d96.js"></script><script charset="utf-8" src="js/twk-chunk-48f46bef.js"></script><script charset="utf-8" src="js/twk-chunk-4fe9d5dd.js"></script><script charset="utf-8" src="js/twk-chunk-2d0b9454.js"></script><script charset="utf-8" src="js/twk-chunk-f163fcd0.js"></script><script charset="utf-8" src="js/twk-chunk-32507910.js"></script>
 
@@ -70,7 +70,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-          ⚡ SEJA BEM-VINDO À NEXUS API REST 👑
+          ⚡ SEJA BEM-VINDO À NEEXT API 👑
         </div>
       </div>
     </div>
@@ -93,7 +93,7 @@
 <span class="count bg-success"></span>
 </div>
 <div class="profile-name">
-<h5 class="mb-0 font-weight-normal">NEXUS APIS <\></h5>
+<h5 class="mb-0 font-weight-normal">NEEXT API <\></h5>
 <span>APIS A BAIXO</span>
 </div>
 </div>
@@ -747,7 +747,7 @@
 <ul class="navbar-nav w-100">
 <li class="nav-item w-100">
 <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-<input type="text" class="form-control" placeholder="© Por NEXUS APIS REST">
+<input type="text" class="form-control" placeholder="© Por NEEXT API">
 </form>
 </li>
 </ul>
@@ -782,7 +782,7 @@
 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
 <div class="navbar-profile">
 <img class="img-xs rounded-circle" src="https://telegra.ph/file/957afb9bc37658339c603.jpg" alt="">
-<p class="mb-0 d-none d-sm-block navbar-profile-name">MELHORES APIS DA NEXUS</p>
+<p class="mb-0 d-none d-sm-block navbar-profile-name">MELHORES APIS DA NEEXT</p>
 </div>
 </a>
 </li>
@@ -1003,55 +1003,11 @@ APIKEY✅: ${JSON.stringify(data.apikey)}`,
 
 
 <body>
-<div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-<div class="card">
-<div class="card-body">
-<h5 class="font-weight-bold text-danger text-uppercase"></h5>
-       <h5 class="font-weight-bold text-danger text-uppercase">⚡CREDITOS⚡</h5>
-
-        <p style="color: red;">Apis completa: </p><p>fantasma</p></p>
-        <p style="color: red;">Implementações:</p><p> Sistema de login, painel, sistema de login do painel, sistema de request dash</p>
-        <p style="color: red;">Feito por vix zap</p>
-    </div>
-    </div>
-    </div>
-<div class="col-xl-3 col-sm-6 grid-margin stretch-card" style="text-align:center">
-<div class="card">
-<div class="card-body">
-<h5 class="font-weight-bold text-danger text-uppercase"></h5>
-          <h5 class="font-weight-bold text-uppercase" style="color: #7d00ff; font-size: 30px;">⚡USUÁRIOS⚡</h5>
-          <br>
-          <span id="userCount" class="fs-1" style="font-size: 100px; text-align: center;">Carregando...</span>
-    </div>
-    </div>
-    </div>
-<script>
-  async function fetchUserCount() {
-    try {
-      const response = await fetch('/api/users/count');
-      const data = await response.json();
-
-      if (data.count !== undefined) {
-        document.getElementById('userCount').textContent = data.count;
-      } else {
-        console.error('Erro ao obter a contagem de usuários:', data.error || 'Erro desconhecido');
-      }
-    } catch (error) {
-      console.error('Erro ao fazer a requisição:', error.message);
-    }
-  }
-
-  // Atualiza a contagem inicialmente
-  fetchUserCount();
-
-  // Atualiza a contagem a cada 100 segundos
-  setInterval(fetchUserCount, 100000); // 100 segundos
-</script>
 
 
     
 
-        <font face="Original Surfer" class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © <span id="Years">2024 </span>⚡FANTASMA - VIX ZAP✅</font>
+        <font face="Original Surfer" class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © <span id="Years">2024 </span>⚡NEEXT✅</font>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
