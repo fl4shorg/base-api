@@ -12,13 +12,13 @@ const mockApiConfig = {
   interface: {
     titulo_paginas: "NEEXT API - Documentação",
     descricao_paginas: "API REST completa com diversos geradores e ferramentas",
-    foto_dash: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
-    logotipo_url: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
-    favicon_url: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
-    foto_inicio: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
-    foto_loja: "https://telegra.ph/file/957afb9bc37658339c603.jpg",
+    foto_dash: "https://i.ibb.co/1Y6pmHpm/file-00000000d0f061fda8e02eb8d911fbb3.png",
+    logotipo_url: "https://i.ibb.co/1Y6pmHpm/file-00000000d0f061fda8e02eb8d911fbb3.png",
+    favicon_url: "https://i.ibb.co/1Y6pmHpm/file-00000000d0f061fda8e02eb8d911fbb3.png",
+    foto_inicio: "https://i.ibb.co/1Y6pmHpm/file-00000000d0f061fda8e02eb8d911fbb3.png",
+    foto_loja: "https://i.ibb.co/1Y6pmHpm/file-00000000d0f061fda8e02eb8d911fbb3.png",
     foto_login: "https://telegra.ph/file/d9ff95e4db542069612c0.jpg",
-    foto_rg: "https://telegra.ph/file/957afb9bc37658339c603.jpg"
+    foto_rg: "https://i.ibb.co/1Y6pmHpm/file-00000000d0f061fda8e02eb8d911fbb3.png"
   },
   contato: {
     url_instagram: "https://instagram.com",
