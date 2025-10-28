@@ -40,36 +40,229 @@
       background-color: transparent !important;
     }
 
-    /* Estilo para a animação de entrada */
-    @keyframes slide-in-left {
-      0% {
-        transform: translateX(-100%);
+    /* Modern Card Styles com Glassmorphism */
+    .card {
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+      transition: all 0.3s ease !important;
+      overflow: hidden !important;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) !important;
+      box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.5) !important;
+      border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .card-body {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+
+    /* Sidebar moderna */
+    .sidebar {
+      background: rgba(0, 0, 0, 0.4) !important;
+      backdrop-filter: blur(15px) !important;
+      -webkit-backdrop-filter: blur(15px) !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .sidebar .nav-item .nav-link {
+      transition: all 0.3s ease !important;
+      border-radius: 10px !important;
+      margin: 5px 10px !important;
+    }
+
+    .sidebar .nav-item .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      transform: translateX(5px) !important;
+    }
+
+    /* Navbar moderna */
+    .navbar {
+      background: rgba(0, 0, 0, 0.4) !important;
+      backdrop-filter: blur(15px) !important;
+      -webkit-backdrop-filter: blur(15px) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Botões modernos */
+    .btn {
+      border-radius: 15px !important;
+      padding: 12px 30px !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      border: none !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .btn:hover {
+      transform: scale(1.05) !important;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    }
+
+    /* Input moderno */
+    input[type="text"], .form-control {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 15px !important;
+      color: white !important;
+      padding: 15px 20px !important;
+      backdrop-filter: blur(10px) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    input[type="text"]:focus, .form-control:focus {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border: 1px solid rgba(255, 255, 255, 0.4) !important;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2) !important;
+      outline: none !important;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /* Títulos com gradiente */
+    h5, h3, h6 {
+      background: linear-gradient(135deg, #ffffff 0%, #a8c0ff 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      font-weight: 700 !important;
+    }
+
+    /* Ícones com efeito */
+    .icon-box-success {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+      border-radius: 15px !important;
+      padding: 15px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .card:hover .icon-box-success {
+      transform: rotate(10deg) scale(1.1) !important;
+    }
+
+    /* Animação de fade-in para cards */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      100% {
-        transform: translateX(0);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* Estilo para o toast */
+    .card {
+      animation: fadeInUp 0.6s ease-out !important;
+    }
+
+    /* Números com efeito neon */
+    .card h3 {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5) !important;
+      font-size: 2.5rem !important;
+    }
+
+    /* Toast moderno */
     .toast {
       position: relative;
       z-index: 1050;
       width: 300px;
-      animation: slide-in-left 0.5s forwards ease-out;
-      left: -100%; /* Inicialmente fora da tela à esquerda */
+      background: rgba(0, 0, 0, 0.8) !important;
+      backdrop-filter: blur(15px) !important;
+      border-radius: 15px !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      animation: slideInLeft 0.5s ease-out;
     }
 
-    /* Estilo para o cabeçalho do toast */
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
     .toast-header {
-      background-color: #6c757d; /* Cor de fundo do cabeçalho (cinza escuro) */
-      color: #ffffff; /* Cor do texto do cabeçalho (branco) */
-      border-color: #6c757d; /* Cor da borda do cabeçalho */
+      background: rgba(102, 126, 234, 0.3) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 15px 15px 0 0 !important;
     }
 
-    /* Estilo para o corpo do toast */
     .toast-body {
-      background-color: #343a40; /* Cor de fundo do corpo do toast (cinza mais escuro) */
-      color: #ffffff; /* Cor do texto do corpo do toast (branco) */
+      background: transparent !important;
+      padding: 20px !important;
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+
+    /* Efeito de brilho nos cards */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .card:hover::before {
+      left: 100%;
+    }
+
+    /* Texto com melhor legibilidade */
+    .text-muted {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .font-weight-bold {
+      font-weight: 700 !important;
+      letter-spacing: 0.5px !important;
+    }
+
+    /* Profile pic moderna */
+    .rounded-circle {
+      border: 3px solid rgba(255, 255, 255, 0.3) !important;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .rounded-circle:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5) !important;
     }
   </style>
 
